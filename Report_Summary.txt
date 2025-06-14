@@ -1,0 +1,43 @@
+Report: Disease Outbreak Prediction for SDG 3
+SDG Problem Addressed
+This project addresses Sustainable Development Goal (SDG) 3: Good Health and Well-being, specifically the need for proactive disease outbreak management. Annually, over a billion people suffer from vector-borne and environmental diseases, and many lives are lost due to delayed detection. Vulnerable populations in low-resource settings lack early warning systems that could mitigate risks posed by climate change, rapid urban growth, and poor sanitation. The aim is to enable early intervention through predictive modeling, helping public health stakeholders allocate resources effectively and reduce mortality.
+
+ML Approach Used
+We employed a Random Forest Classifier for supervised prediction of disease outbreak risk. The model was trained on a synthetic dataset of 1,000 entries that included the following features:
+
+Environmental: Temperature, Rainfall, Humidity
+
+Socio-health: Population Density, Sanitation Score, Previous Outbreaks
+
+Region: Encoded as integers (0 = rural, 1 = urban, 2 = coastal)
+
+All features were standardized, allowing the model to work with normalized values. The target variable was outbreak_risk (0 = low, 1 = high). With no missing values and balanced feature representation, the data provided a solid foundation for supervised learning.
+
+Results and Ethical Considerations
+The model achieved:
+
+Accuracy: 87%
+
+F1 Score: 0.85
+
+The top predictors were:
+
+Previous Outbreaks
+
+Rainfall
+
+Population Density
+
+These findings reinforce the role of environmental and historical trends in outbreak risks. The model showed no apparent bias across different regions, suggesting broad applicability.
+
+However, there are important ethical considerations:
+
+Bias Risk: Although balanced across simulated regions, real-world deployment requires geographically diverse, real data to avoid biased predictions.
+
+Adaptability: Continuous retraining is necessary to capture evolving patterns due to climate change.
+
+Validation: Collaboration with local health authorities is critical to ensure practical relevance and reliability.
+
+Transparency: Model decisions should be interpretable to support responsible action by stakeholders.
+
+Future improvements will integrate real-time environmental APIs and provide risk alerts through a mobile/web dashboard, making the tool actionable for governments and NGOs in outbreak-prone areas.
